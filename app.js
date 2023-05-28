@@ -6,7 +6,7 @@ const app = express();
 const bodyparser = require("body-parser");
 
 app.use(bodyparser.urlencoded({ extended: false }));
-
+app.use(express.static(path.join(__dirname, "public")));
 app.use("/admin", myAdminRouter);
 app.use(myShopRouter);
 app.use((req, res, next) => {
